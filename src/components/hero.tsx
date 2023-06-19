@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { Dancing_Script } from "next/font/google";
 
+const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });
 export default function Hero() {
   const features = [
     {
@@ -74,9 +76,11 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <h1 className='text-4xl text-content font-extrabold mx-auto md:text-5xl'>
-            Explore in-demand careers and develop cutting edge skills
-          </h1>
+          <div className={ds.className}>
+            <h1 className=' text-7xl text-content font-extrabold mx-auto md:text-8xl'>
+              A Special Affair
+            </h1>
+          </div>
           <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
             Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
             doloremque laudantium, totam rem aperiam, eaque ipsa quae.
