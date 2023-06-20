@@ -2,12 +2,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Dancing_Script } from "next/font/google";
+import Link from "next/link";
 
 const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });
 export default function Hero() {
   const features = [
     {
-      name: "Trusted",
+      name: "Verified",
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -24,35 +25,37 @@ export default function Hero() {
       ),
     },
     {
-      name: "Over 50+ videos",
+      name: "Convenient Location",
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 20 20'
+          viewBox='0 0 24 24'
           fill='currentColor'
-          className='w-5 h-5'
+          className='w-6 h-6'
         >
           <path
             fillRule='evenodd'
-            d='M1 4.75C1 3.784 1.784 3 2.75 3h14.5c.966 0 1.75.784 1.75 1.75v10.515a1.75 1.75 0 01-1.75 1.75h-1.5c-.078 0-.155-.005-.23-.015H4.48c-.075.01-.152.015-.23.015h-1.5A1.75 1.75 0 011 15.265V4.75zm16.5 7.385V11.01a.25.25 0 00-.25-.25h-1.5a.25.25 0 00-.25.25v1.125c0 .138.112.25.25.25h1.5a.25.25 0 00.25-.25zm0 2.005a.25.25 0 00-.25-.25h-1.5a.25.25 0 00-.25.25v1.125c0 .108.069.2.165.235h1.585a.25.25 0 00.25-.25v-1.11zm-15 1.11v-1.11a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25v1.125a.25.25 0 01-.164.235H2.75a.25.25 0 01-.25-.25zm2-4.24v1.125a.25.25 0 01-.25.25h-1.5a.25.25 0 01-.25-.25V11.01a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25zm13-2.005V7.88a.25.25 0 00-.25-.25h-1.5a.25.25 0 00-.25.25v1.125c0 .138.112.25.25.25h1.5a.25.25 0 00.25-.25zM4.25 7.63a.25.25 0 01.25.25v1.125a.25.25 0 01-.25.25h-1.5a.25.25 0 01-.25-.25V7.88a.25.25 0 01.25-.25h1.5zm0-3.13a.25.25 0 01.25.25v1.125a.25.25 0 01-.25.25h-1.5a.25.25 0 01-.25-.25V4.75a.25.25 0 01.25-.25h1.5zm11.5 1.625a.25.25 0 01-.25-.25V4.75a.25.25 0 01.25-.25h1.5a.25.25 0 01.25.25v1.125a.25.25 0 01-.25.25h-1.5zm-9 3.125a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z'
+            d='M4.5 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5h-.75V3.75a.75.75 0 000-1.5h-15zM9 6a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5H9zm-.75 3.75A.75.75 0 019 9h1.5a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM9 12a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5H9zm3.75-5.25A.75.75 0 0113.5 6H15a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM13.5 9a.75.75 0 000 1.5H15A.75.75 0 0015 9h-1.5zm-.75 3.75a.75.75 0 01.75-.75H15a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM9 19.5v-2.25a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-4.5A.75.75 0 019 19.5z'
             clipRule='evenodd'
           />
         </svg>
       ),
     },
     {
-      name: "400 ratings",
+      name: "Affordable Price",
       icon: (
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 20 20'
-          fill='currentColor'
-          className='w-5 h-5'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth={1.5}
+          stroke='currentColor'
+          className='w-6 h-6'
         >
           <path
-            fillRule='evenodd'
-            d='M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z'
-            clipRule='evenodd'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
           />
         </svg>
       ),
@@ -77,20 +80,31 @@ export default function Hero() {
             ))}
           </div>
           <div className={ds.className}>
-            <h1 className=' text-7xl text-content font-extrabold mx-auto md:text-8xl'>
+            <h1 className=' text-7xl pb-1 text-content font-extrabold mx-auto md:text-8xl'>
               A Special Affair
             </h1>
           </div>
-          <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
-            Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+          <div className='space-y-1'>
+            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
+              {" "}
+              Women&apos;s Dance Studio
+            </p>
+            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
+              1415 N Dayton St 3rd floor, Chicago, IL 60642
+            </p>
+            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
+              Bianca Teague +1 (773) 886-5543
+            </p>
+          </div>
+          <p className='max-w-xl mx-auto xl:mx-0 text-xl font-semibold text-neutral text-center pt-5'>
+            Embrace Your Rhythm, Unleash Your Grace
           </p>
           <div className='items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 xl:justify-start'>
-            <a
+            <Link
               href='/'
               className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
             >
-              Browse courses
+              Open Classes
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'
@@ -103,10 +117,10 @@ export default function Hero() {
                   clipRule='evenodd'
                 />
               </svg>
-            </a>
-            <a
-              href='javascript:void(0)'
-              className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary hover:text-secondary font-medium duration-150 active:bg-secondary border rounded-lg md:inline-flex'
+            </Link>
+            <Link
+              href='/prices'
+              className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
             >
               Get access
               <svg
@@ -121,17 +135,17 @@ export default function Hero() {
                   clipRule='evenodd'
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className='flex-1 max-w-xl mx-auto mt-14 xl:mt-0'>
           <div className='relative'>
             <Image
-              src='https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+              src='https://w.wallhaven.cc/full/ym/wallhaven-yml1zl.jpg'
               className='rounded-lg'
               alt=''
-              width={1000}
-              height={1000}
+              width={800}
+              height={800}
               quality={100}
               priority={true}
             />
