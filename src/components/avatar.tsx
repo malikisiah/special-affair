@@ -1,9 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SignOutButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
-Image;
 export default function Avatar({ imageSrc, userName }: any) {
   const router = useRouter();
   return (

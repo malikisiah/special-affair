@@ -1,7 +1,8 @@
-export default function Prices() {
+import Prices from "./prices";
+export default function PricePage() {
   return (
     <div className=' flex items-center justify-center align-middle min-h-screen text-center'>
-      <h1> Prices Page</h1>
+      <Prices />
     </div>
   );
 }

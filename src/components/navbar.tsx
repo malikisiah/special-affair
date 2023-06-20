@@ -9,14 +9,14 @@ import Avatar from "./avatar";
 export default function Navbar() {
   const [state, setState] = useState(false);
 
-  const [userImage, setUserImage] = useState("");
+  const [userImage, setUserImage] = useState("/flower.png");
   const [userName, setUserName] = useState("");
 
   const navigation = [
-    { title: "Customers", path: "/" },
-    { title: "Careers", path: "/" },
-    { title: "Guides", path: "/" },
-    { title: "Partners", path: "/" },
+    { title: "Schedule", path: "/" },
+    { title: "Routines", path: "/" },
+    { title: "Prices", path: "/prices" },
+    { title: "About Me", path: "/" },
   ];
 
   const { isLoaded, userId, sessionId, getToken } = useAuth();
@@ -83,7 +83,7 @@ export default function Navbar() {
             state ? "block" : "hidden"
           }`}
         >
-          <ul className='justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0'>
+          <ul className='justify-center items-center  space-y-8 md:flex md:space-x-8 md:space-y-0'>
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className='text-gray-600 hover:text-secondary'>
