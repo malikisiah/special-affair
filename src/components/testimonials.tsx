@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Testimonials() {
   const testimonials = [
     {
-      avatar: "/good-faces-xmSWVeGEnJw-unsplash.jpg",
+      avatar: "/fatane-rahimi--8kfrn_Tjps-unsplash.jpg",
       name: "Sophia Martinez",
       title: "Pediatrician",
       quote:

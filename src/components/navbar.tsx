@@ -16,9 +16,9 @@ export default function Navbar() {
 
   const navigation = [
     { title: "Schedule", path: "/" },
-    { title: "Routines", path: "/" },
+    { title: "Routines", path: "/routines" },
     { title: "Prices", path: "/prices" },
-    { title: "About Me", path: "/" },
+    { title: "About Me", path: "/aboutme" },
   ];
 
   const { isLoaded, userId, sessionId, getToken } = useAuth();

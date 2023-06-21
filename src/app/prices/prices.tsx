@@ -1,10 +1,19 @@
+"use client";
+import { useAuth } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
+import { useState } from "react";
+import Modal from "./modal";
 export default function Prices() {
+  const { isLoaded, userId } = useAuth();
+  const [isLoading, setisLoading] = useState(false);
+  const { user } = useUser();
   const plans = [
     {
       name: "Daily",
       desc: "Dive into a day of dance euphoria with our Day Pass. Perfect for first-timers or those looking for a spontaneous dance experience.",
       price: 30,
       isMostPop: false,
+      id: "price_1NLSurHP9k2x8W0pOKs1bKmW",
       cycle: "day",
       features: [
         "Access to all classes on the day of purchase",
@@ -17,6 +26,7 @@ export default function Prices() {
       desc: "Immerse yourself in a month of grace and elegance with our Monthly Pass. A great choice for dance enthusiasts keen on consistent practice and diverse dance styles",
       price: 120,
       isMostPop: true,
+      id: "price_1NLTBNHP9k2x8W0pezVUtifm",
       cycle: "month",
       features: [
         "Unlimited access to all classes for 30 days",
@@ -30,6 +40,7 @@ export default function Prices() {
       desc: "Embrace your rhythm all year long with our Yearly Pass. The ultimate option for dedicated dancers, offering a plethora of perks and exclusive privileges",
       price: 1200,
       isMostPop: false,
+      id: "price_1NLTBkHP9k2x8W0p6FEhDpwn",
       cycle: "year",
       features: [
         "Unlimited access to all classes for 365 days",
@@ -41,6 +52,28 @@ export default function Prices() {
       ],
     },
   ];
+
+  const handleClick = async (id: string) => {
+    if (!isLoaded || !userId) {
+      alert("Sign in to Purchase");
+    } else {
+      setisLoading(true);
+      const email = user?.emailAddresses[0].emailAddress;
+      const response = await fetch("/api/payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          email,
+        }),
+      });
+
+      const data = await response.json();
+      window.location.assign(data);
+    }
+  };
 
   return (
     <section className='py-14'>
@@ -79,37 +112,19 @@ export default function Prices() {
                     /{item.cycle}
                   </span>
                 </div>
-                <p className='md:min-h-full '>{item.desc}</p>
-                <button className='px-3 py-3 active:bg-secondary-focus rounded-lg w-full font-semibold text-sm  md:-translate-y-20 text-white bg-neutral hover:bg-secondary'>
+                <p className='md:min-h-full pt-3 '>{item.desc}</p>
+                <button
+                  className='px-3 py-3  active:bg-secondary-focus rounded-lg w-full font-semibold text-sm  md:-translate-y-20 text-white bg-neutral hover:bg-secondary'
+                  onClick={() => handleClick(item.id)}
+                >
                   Purchase
                 </button>
               </div>
-              {/* <ul className='p-8 space-y-3'>
-                <li className='pb-2 text-gray-800 font-medium'>
-                  <p>Features</p>
-                </li>
-                {item.features.map((featureItem, idx) => (
-                  <li key={idx} className='flex items-center gap-5'>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      className='h-5 w-5 text-indigo-600'
-                      viewBox='0 0 20 20'
-                      fill='currentColor'
-                    >
-                      <path
-                        fill-rule='evenodd'
-                        d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                        clip-rule='evenodd'
-                      ></path>
-                    </svg>
-                    {featureItem}
-                  </li>
-                ))}
-              </ul> */}
             </div>
           ))}
         </div>
       </div>
+      {isLoading ? <Modal /> : null}
     </section>
   );
 }

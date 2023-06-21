@@ -87,13 +87,48 @@ export default function Hero() {
           <div className='card bg-base-200'>
             <div className='space-y-1 card-body'>
               <p className='max-w-xl mx-auto xl:mx-0 text-black'>
-                {" "}
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='w-6 h-6 inline-flex pr-1'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M19.952 1.651a.75.75 0 01.298.599V16.303a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.403-4.909l2.311-.66a1.5 1.5 0 001.088-1.442V6.994l-9 2.572v9.737a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.402-4.909l2.31-.66a1.5 1.5 0 001.088-1.442V9.017 5.25a.75.75 0 01.544-.721l10.5-3a.75.75 0 01.658.122z'
+                    clipRule='evenodd'
+                  />
+                </svg>{" "}
                 Women&apos;s Dance Studio
               </p>
               <p className='max-w-xl mx-auto xl:mx-0 text-black'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='w-6 h-6 inline-flex pr-1'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z'
+                    clipRule='evenodd'
+                  />
+                </svg>
                 1415 N Dayton St 3rd floor, Chicago, IL 60642
               </p>
               <p className='max-w-xl mx-auto xl:mx-0 text-black'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='w-6 h-6 inline-flex pr-1'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z'
+                    clipRule='evenodd'
+                  />
+                </svg>
                 Bianca Teague: +1 (773) 886-5543
               </p>
             </div>
@@ -121,7 +156,7 @@ export default function Hero() {
               </svg>
             </Link>
             <Link
-              href='/'
+              href='/routines'
               className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
             >
               See Routines
