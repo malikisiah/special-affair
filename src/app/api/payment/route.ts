@@ -20,8 +20,8 @@ export async function POST(request: NextRequest) {
     ],
     mode: "payment",
     customer_email: email,
-    success_url: "http://localhost:3000",
-    cancel_url: "http://localhost:3000",
+    success_url: "https://special-affair.vercel.app/",
+    cancel_url: "https://special-affair.vercel.app/",
   });
 
   return NextResponse.json(session.url);
