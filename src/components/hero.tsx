@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Dancing_Script } from "next/font/google";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });

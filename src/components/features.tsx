@@ -1,93 +1,92 @@
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
 export default function Features() {
   const features = [
     {
       icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth={1.5}
-          stroke='currentColor'
-          className='w-6 h-6'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z'
-          />
-        </svg>
+        <Image
+          src='/alexander-jawfox-oEpnMn1y-7A-unsplash.jpg'
+          width={600}
+          height={600}
+          alt=''
+          quality={100}
+          className='rounded-md'
+        />
       ),
-      title: "Analytics",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+      title: "Personalized Dance Programs",
+      desc: "Embark on a journey tailored just for you! At A Special Affair, our seasoned instructors will work with you to design a personalized dance program that aligns with your goals, style, and pace. Whether you're an elegant beginner or a seasoned ballerina, we ensure your experience is unique and transformative. Revel in the rhythm and discover the dancer within.",
     },
     {
       icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth={1.5}
-          stroke='currentColor'
-          className='w-6 h-6'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z'
-          />
-        </svg>
+        <Image
+          src='/chris-yang-u-ONkFoHXAI-unsplash.jpg'
+          width={600}
+          height={600}
+          alt=''
+          quality={100}
+          className='rounded-md'
+        />
       ),
-      title: "Datacenter security",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+      title: "Elegance Lounge",
+      desc: "Step into our Elegance Lounge - an exclusive haven for our lovely dancers. Our state-of-the-art facility, featuring spacious studios with sprung hardwood floors, full-length mirrors, and ambient lighting, sets the perfect stage for your dancing journey. Enjoy luxurious amenities including a serene relaxation area, private lockers, and an exquisite selection of teas and beverages to keep you refreshed and invigorated.",
     },
     {
       icon: (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth={1.5}
-          stroke='currentColor'
-          className='w-6 h-6'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3'
-          />
-        </svg>
+        <Image
+          src='/gordon-cowie-SUADE2U97mE-unsplash.jpg'
+          width={600}
+          height={600}
+          alt=''
+          quality={100}
+          className='rounded-md'
+        />
       ),
-      title: "Build on your terms",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+      title: "Enriching Community Discovery",
+      desc: "Connect, grow, and celebrate with a community that shares your passion for dance. A Special Affair hosts a range of enriching events including social dances, themed parties, workshops, and wellness sessions. Immerse yourself in a vibrant atmosphere, gain insights from industry professionals, and create cherished memories with fellow dancers. Your dance experience is more than just steps; it's a path to lifelong friendships and self-discovery.",
     },
   ];
 
   return (
     <section className='py-14'>
-      <div className='max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8'>
-        <div className='max-w-xl space-y-3'>
-          <p className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
-            Do more with less complexity
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            congue, nisl eget molestie varius
-          </p>
-        </div>
+      <div className='max-w-screen-xl mx-auto px-4 text-content md:px-8'>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          <div className='max-w-xl space-y-3'>
+            <p className='text-primary-content text-3xl font-semibold sm:text-4xl'>
+              Elevating Dance Experiences: Our Exclusive Offerings
+            </p>
+            {/* <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              congue, nisl eget molestie varius
+            </p> */}
+          </div>
+        </motion.div>
         <div className='mt-12'>
-          <ul className='grid gap-x-12 divide-y [&>.feature-1]:pl-0 sm:grid-cols-2 sm:gap-y-8 sm:divide-y-0 lg:divide-x lg:grid-cols-3 lg:gap-x-0'>
+          <ul className='grid gap-x-12 divide-y  sm:grid-cols-2 sm:gap-y-8 sm:divide-y-0 lg:divide-x lg:grid-cols-3 lg:gap-x-0'>
             {features.map((item, idx) => (
               <li
                 key={idx}
                 className={`feature-${idx + 1} space-y-3 py-8 lg:px-12 sm:py-0`}
               >
-                <div className='w-12 h-12 border text-indigo-600 rounded-full flex items-center justify-center'>
-                  {item.icon}
-                </div>
-                <h4 className='text-lg text-gray-800 font-semibold'>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                >
+                  <div className=' flex items-center justify-center'>
+                    {item.icon}
+                  </div>
+                </motion.div>
+
+                <h4 className='text-lg text-primary-content font-semibold'>
                   {item.title}
                 </h4>
-                <p>{item.desc}</p>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                >
+                  <p>{item.desc}</p>
+                </motion.div>
               </li>
             ))}
           </ul>
