@@ -1,10 +1,10 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
   title: "A Special Affair",

@@ -46,7 +46,7 @@ export default function Testimonials() {
           <div className='mt-12'>
             <ul className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
               {testimonials.map((item, idx) => (
-                <li key={idx} className='bg-secondary p-4 rounded-xl'>
+                <li key={idx} className='bg-base-200 p-4 rounded-xl'>
                   <figure>
                     <div className='flex items-center gap-x-4'>
                       <Image
@@ -67,7 +67,7 @@ export default function Testimonials() {
                       </div>
                     </div>
                     <blockquote>
-                      <p className='mt-6 text-accent-content'>{item.quote}</p>
+                      <p className='mt-6 text-black'>{item.quote}</p>
                     </blockquote>
                   </figure>
                 </li>

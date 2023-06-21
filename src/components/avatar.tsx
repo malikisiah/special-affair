@@ -17,7 +17,7 @@ export default function Avatar({ imageSrc, userName }: any) {
         tabIndex={0}
         className='dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52'
       >
-        <p className='pb-4 pl-3'>Welcome, {userName}</p>
+        <p className='pb-2 pl-3'>Welcome, {userName} &#x2764;</p>
         <li>
           <a>
             <SignOutButton>

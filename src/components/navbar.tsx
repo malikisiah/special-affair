@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useAuth } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import Avatar from "./avatar";
+import { Dancing_Script } from "next/font/google";
+const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });
 
 export default function Navbar() {
   const [state, setState] = useState(false);
@@ -33,14 +35,21 @@ export default function Navbar() {
     <nav className='bg-base-200 w-full border-b md:border-1 border-black  sticky top-0 z-50'>
       <div className='items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8'>
         <div className='flex items-center justify-between py-3 md:py-5 md:block'>
-          <Link href='/'>
-            <Image
-              src='/flower.png'
-              width={45}
-              height={45}
-              alt='Float UI logo'
-            />
-          </Link>
+          <div className=' justify-start items-center'>
+            <Link href='/'>
+              <span className=' text-xl text-black'>
+                {" "}
+                <div className={ds.className}> A Special Affair</div>
+              </span>
+              {/* <Image
+                src='/flower.png'
+                width={100}
+                height={100}
+                alt='Float UI logo'
+                className='inline-flex w-10 h-10'
+              /> */}
+            </Link>
+          </div>
           <div className='md:hidden'>
             <button
               className='text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border'
@@ -86,7 +95,7 @@ export default function Navbar() {
           <ul className='justify-center items-center  space-y-8 md:flex md:space-x-8 md:space-y-0'>
             {navigation.map((item, idx) => {
               return (
-                <li key={idx} className='text-gray-600 hover:text-secondary'>
+                <li key={idx} className='text-black hover:text-secondary'>
                   <Link href={item.path}>{item.title}</Link>
                 </li>
               );
@@ -101,7 +110,7 @@ export default function Navbar() {
           <div className='hidden md:inline-block'>
             <Link
               href='/sign-in'
-              className='py-3 px-4 text-gray-600 hover:text-secondary rounded-md shadow '
+              className='py-3 px-4 text-black hover:text-secondary rounded-md shadow '
             >
               Sign In
             </Link>

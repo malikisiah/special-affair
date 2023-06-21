@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Dancing_Script } from "next/font/google";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });
@@ -81,21 +80,23 @@ export default function Hero() {
             ))}
           </div>
           <div className={ds.className}>
-            <h1 className=' text-7xl pb-1 text-content font-extrabold mx-auto md:text-8xl'>
+            <h1 className=' text-7xl pb-1 text-content font-extrabold mx-auto md:text-8xl '>
               A Special Affair
             </h1>
           </div>
-          <div className='space-y-1'>
-            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
-              {" "}
-              Women&apos;s Dance Studio
-            </p>
-            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
-              1415 N Dayton St 3rd floor, Chicago, IL 60642
-            </p>
-            <p className='max-w-xl mx-auto xl:mx-0 text-neutral'>
-              Bianca Teague +1 (773) 886-5543
-            </p>
+          <div className='card bg-base-200'>
+            <div className='space-y-1 card-body'>
+              <p className='max-w-xl mx-auto xl:mx-0 text-black'>
+                {" "}
+                Women&apos;s Dance Studio
+              </p>
+              <p className='max-w-xl mx-auto xl:mx-0 text-black'>
+                1415 N Dayton St 3rd floor, Chicago, IL 60642
+              </p>
+              <p className='max-w-xl mx-auto xl:mx-0 text-black'>
+                Bianca Teague: +1 (773) 886-5543
+              </p>
+            </div>
           </div>
           <p className='max-w-xl mx-auto xl:mx-0 text-xl font-semibold text-neutral text-center pt-5'>
             Embrace Your Rhythm, Unleash Your Grace
@@ -106,6 +107,24 @@ export default function Hero() {
               className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
             >
               Open Classes
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+                className='w-5 h-5'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z'
+                  clipRule='evenodd'
+                />
+              </svg>
+            </Link>
+            <Link
+              href='/'
+              className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
+            >
+              See Routines
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 20 20'

@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { Dancing_Script } from "next/font/google";
+const ds = Dancing_Script({ subsets: ["latin"], weight: "400" });
 export default function Footer() {
   return (
-    <footer className='footer items-center p-4 bg-neutral text-neutral-content'>
+    <footer className='footer items-center p-4 bg-black text-neutral-content'>
       <div className='items-center grid-flow-col'>
         <Image
           src='/flower.png'
@@ -11,9 +13,12 @@ export default function Footer() {
           quality={100}
           className='w-8  h-8'
         />
-        <p>
-          &quot;A Special Affair&quot; Copyright © 2023 - All right reserved
-        </p>
+        <h1 className='inline-flex'>
+          <p className={` pr-3 ${ds.className}`}>
+            &quot;A Special Affair&quot;
+          </p>
+          Copyright © 2023 - All rights reserved
+        </h1>
       </div>
       <div className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
         <a>

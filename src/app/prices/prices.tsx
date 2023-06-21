@@ -1,63 +1,58 @@
 export default function Prices() {
   const plans = [
     {
-      name: "Basic plan",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 12,
+      name: "Daily",
+      desc: "Dive into a day of dance euphoria with our Day Pass. Perfect for first-timers or those looking for a spontaneous dance experience.",
+      price: 30,
       isMostPop: false,
+      cycle: "day",
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Access to all classes on the day of purchase",
+        "Complimentary refreshments",
+        "Rental dance shoes available",
       ],
     },
     {
-      name: "Startup",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 35,
+      name: "Monthly",
+      desc: "Immerse yourself in a month of grace and elegance with our Monthly Pass. A great choice for dance enthusiasts keen on consistent practice and diverse dance styles",
+      price: 120,
       isMostPop: true,
+      cycle: "month",
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Unlimited access to all classes for 30 days",
+        "10% discount on special workshops and events",
+        "Priority booking for select classes",
+        "1 complimentary guest pass",
       ],
     },
     {
-      name: "Enterprise",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 60,
+      name: "Yearly",
+      desc: "Embrace your rhythm all year long with our Yearly Pass. The ultimate option for dedicated dancers, offering a plethora of perks and exclusive privileges",
+      price: 1200,
       isMostPop: false,
+      cycle: "year",
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Unlimited access to all classes for 365 days",
+        "20% discount on special workshops and events",
+        "Priority booking for all classes and events",
+        "5 complimentary guest passes",
+        "Exclusive access to the Elegance Lounge",
+        "Personalized fitness & dance progress consultation",
       ],
     },
   ];
 
   return (
     <section className='py-14'>
-      <div className='max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8'>
+      <div className='max-w-screen-xl mx-auto px-4 text-primary-content md:px-8'>
         <div className='relative max-w-xl mx-auto sm:text-center'>
-          <h3 className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
-            Pricing for all sizes
+          <h3 className='text-neutral-focus text-3xl font-semibold sm:text-4xl'>
+            Flexible Pricing Fit for Any Queen
           </h3>
           <div className='mt-3 max-w-xl'>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              efficitur consequat nunc.
+              You can purchase a daily pass or opt in for monthly/yearly
+              subscriptions for unlimited access
             </p>
           </div>
         </div>
@@ -65,7 +60,7 @@ export default function Prices() {
           {plans.map((item, idx) => (
             <div
               key={idx}
-              className={`relative flex-1 flex items-stretch flex-col rounded-xl border-2 mt-6 sm:mt-0 ${
+              className={`relative flex-1 flex items-stretch flex-col rounded-xl border-2 border-secondary mt-6 sm:mt-0 ${
                 item.isMostPop ? "mt-10" : ""
               }`}
             >
@@ -76,18 +71,20 @@ export default function Prices() {
               ) : (
                 ""
               )}
-              <div className='p-8 space-y-4 border-b'>
-                <span className='text-indigo-600 font-medium'>{item.name}</span>
+              <div className='p-8   min-h-full'>
+                <span className='text-content font-medium'>{item.name}</span>
                 <div className='text-gray-800 text-3xl font-semibold'>
                   ${item.price}{" "}
-                  <span className='text-xl text-gray-600 font-normal'>/mo</span>
+                  <span className='text-xl text-gray-600 font-normal'>
+                    /{item.cycle}
+                  </span>
                 </div>
-                <p>{item.desc}</p>
-                <button className='px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700'>
-                  Get Started
+                <p className='md:min-h-full '>{item.desc}</p>
+                <button className='px-3 py-3 active:bg-secondary-focus rounded-lg w-full font-semibold text-sm  md:-translate-y-20 text-white bg-neutral hover:bg-secondary'>
+                  Purchase
                 </button>
               </div>
-              <ul className='p-8 space-y-3'>
+              {/* <ul className='p-8 space-y-3'>
                 <li className='pb-2 text-gray-800 font-medium'>
                   <p>Features</p>
                 </li>
@@ -108,7 +105,7 @@ export default function Prices() {
                     {featureItem}
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           ))}
         </div>
