@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useAuth } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import Avatar from "./avatar";
@@ -51,6 +50,18 @@ export default function Navbar() {
             </Link>
           </div>
           <div className='md:hidden'>
+            {userId ? (
+              <Avatar imageSrc={userImage} userName={userName} />
+            ) : (
+              <Link
+                href='/sign-in'
+                className='py-3 px-4 text-black hover:text-secondary rounded-md shadow '
+              >
+                Sign In
+              </Link>
+            )}
+          </div>
+          <div className='md:hidden'>
             <button
               className='text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border'
               onClick={() => setState(!state)}
@@ -96,26 +107,26 @@ export default function Navbar() {
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className='text-black hover:text-secondary'>
-                  <Link href={item.path}>{item.title}</Link>
+                  <Link onClick={() => setState(false)} href={item.path}>
+                    {item.title}
+                  </Link>
                 </li>
               );
             })}
           </ul>
         </div>
-        {userId ? (
-          <div className='hidden md:inline-block'>
+        <div className='hidden md:inline-block'>
+          {userId ? (
             <Avatar imageSrc={userImage} userName={userName} />
-          </div>
-        ) : (
-          <div className='hidden md:inline-block'>
+          ) : (
             <Link
               href='/sign-in'
               className='py-3 px-4 text-black hover:text-secondary rounded-md shadow '
             >
               Sign In
             </Link>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </nav>
   );
