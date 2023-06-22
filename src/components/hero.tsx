@@ -138,7 +138,7 @@ export default function Hero() {
           </p>
           <div className='items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 xl:justify-start'>
             <Link
-              href='/'
+              href='/schedule'
               className='flex items-center justify-center gap-x-2 py-2 px-4 text-primary font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex'
             >
               Open Classes

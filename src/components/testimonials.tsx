@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { AiFillTwitterCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 export default function Testimonials() {
@@ -42,12 +43,15 @@ export default function Testimonials() {
             lorem, euismod volutpat arcu volutpat et.
           </p> */}
         </div>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-          <div className='mt-12'>
-            <ul className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-              {testimonials.map((item, idx) => (
-                <li key={idx} className='bg-base-200 p-4 rounded-xl'>
-                  <figure>
+        <div className='mt-12'>
+          <ul className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+            {testimonials.map((item, idx) => (
+              <li key={idx} className='bg-base-200 p-4 rounded-xl'>
+                <figure>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                  >
                     <div className='flex items-center gap-x-4'>
                       <Image
                         src={item.avatar}
@@ -59,6 +63,9 @@ export default function Testimonials() {
                       />
                       <div>
                         <span className='block text-black font-semibold'>
+                          <div className='inline-flex pr-2 align-middle'>
+                            <AiFillTwitterCircle />
+                          </div>
                           {item.name}
                         </span>
                         <span className='block text-secondary-content text-sm mt-0.5'>
@@ -66,15 +73,20 @@ export default function Testimonials() {
                         </span>
                       </div>
                     </div>
-                    <blockquote>
+                  </motion.div>
+                  <blockquote>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                    >
                       <p className='mt-6 text-black'>{item.quote}</p>
-                    </blockquote>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
+                    </motion.div>
+                  </blockquote>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

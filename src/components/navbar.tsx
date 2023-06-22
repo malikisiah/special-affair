@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
@@ -14,7 +15,7 @@ export default function Navbar() {
   const [userName, setUserName] = useState("");
 
   const navigation = [
-    { title: "Schedule", path: "/" },
+    { title: "Schedule", path: "/schedule" },
     { title: "Routines", path: "/routines" },
     { title: "Prices", path: "/prices" },
     { title: "About Me", path: "/aboutme" },
@@ -107,9 +108,17 @@ export default function Navbar() {
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className='text-black hover:text-secondary'>
-                  <Link onClick={() => setState(false)} href={item.path}>
-                    {item.title}
-                  </Link>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{
+                      opacity: 1,
+                      transition: { delay: idx * 0.15 },
+                    }}
+                  >
+                    <Link onClick={() => setState(false)} href={item.path}>
+                      {item.title}
+                    </Link>
+                  </motion.div>
                 </li>
               );
             })}
