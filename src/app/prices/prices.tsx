@@ -2,6 +2,7 @@
 import { useAuth } from "@clerk/nextjs";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Modal from "./modal";
 export default function Prices() {
   const { isLoaded, userId } = useAuth();
@@ -79,15 +80,17 @@ export default function Prices() {
     <section className='py-14'>
       <div className='max-w-screen-xl mx-auto px-4 text-primary-content md:px-8'>
         <div className='relative max-w-xl mx-auto sm:text-center'>
-          <h3 className='text-neutral-focus text-3xl font-semibold sm:text-4xl'>
-            Flexible Pricing Fit for Any Queen
-          </h3>
-          <div className='mt-3 max-w-xl'>
-            <p>
-              You can purchase a daily pass or opt in for monthly/yearly
-              subscriptions for unlimited access
-            </p>
-          </div>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+            <h3 className='text-neutral-focus text-3xl font-semibold sm:text-4xl'>
+              Flexible Pricing Fit for Any Queen
+            </h3>
+            <div className='mt-3 max-w-xl'>
+              <p>
+                You can purchase a daily pass or opt in for monthly/yearly
+                subscriptions for unlimited access
+              </p>
+            </div>
+          </motion.div>
         </div>
         <div className='mt-16 justify-center gap-6 sm:grid sm:grid-cols-2 sm:space-y-0 lg:grid-cols-3'>
           {plans.map((item, idx) => (

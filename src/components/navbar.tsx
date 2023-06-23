@@ -16,13 +16,25 @@ export default function Navbar() {
 
   const navigation = [
     { title: "Schedule", path: "/schedule" },
-    { title: "Routines", path: "/routines" },
+    { title: "Gallery", path: "/gallery" },
     { title: "Prices", path: "/prices" },
     { title: "About Me", path: "/aboutme" },
   ];
 
   const { isLoaded, userId, sessionId, getToken } = useAuth();
   const { user } = useUser();
+
+  const addtoDB = async () => {
+    await fetch("http://api.example.com/...", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // variables here
+      }),
+    });
+  };
 
   useEffect(() => {
     const image = user?.imageUrl as string;
