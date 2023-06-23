@@ -61,16 +61,16 @@ export default function Gallery() {
                     <div className='w-full h-60 sm:h-52 md:h-56'>
                       <img
                         src={item.avatar}
-                        className='w-full h-full object-cover object-center shadow-md rounded-xl'
+                        className='w-full h-full object-cover object-center shadow-md rounded-xl hover:btn-ghost'
                         alt=''
                       />
                     </div>
-                    <div className='mt-4'>
+                    {/* <div className='mt-4'>
                       <h4 className='text-lg text-gray-700 font-semibold'>
                         {item.name}
                       </h4>
                       <p className='text-secondary-focus'>{item.title}</p>
-                    </div>
+                    </div> */}
                   </motion.div>
                 </li>
               ))}

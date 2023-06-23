@@ -25,7 +25,7 @@ export default function Navbar() {
   const { user } = useUser();
 
   const addtoDB = async () => {
-    await fetch("http://api.example.com/...", {
+    await fetch("http://localhost:3000/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,6 +41,7 @@ export default function Navbar() {
     const name = user?.firstName as string;
     setUserName(name);
     setUserImage(image);
+    // addtoDB();
   }, [user]);
 
   return (
