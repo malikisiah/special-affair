@@ -24,24 +24,11 @@ export default function Navbar() {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
   const { user } = useUser();
 
-  const addtoDB = async () => {
-    await fetch("http://localhost:3000/api", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // variables here
-      }),
-    });
-  };
-
   useEffect(() => {
     const image = user?.imageUrl as string;
     const name = user?.firstName as string;
     setUserName(name);
     setUserImage(image);
-    // addtoDB();
   }, [user]);
 
   return (

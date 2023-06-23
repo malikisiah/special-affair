@@ -1,5 +1,5 @@
 "use client";
-import Header from "./galleryHeader";
+import Header from "../../components/galleryHeader";
 import { motion } from "framer-motion";
 
 export default function Gallery() {
@@ -78,12 +78,10 @@ export default function Gallery() {
           </div>
         </div>
       </section>
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
-        <h1 className='text-center text-primary-content text-3xl'>
-          {" "}
-          I need a good header for this
-        </h1>
-      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      ></motion.div>
     </>
   );
 }
