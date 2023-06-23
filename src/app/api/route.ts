@@ -23,9 +23,9 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  let data = await request.json();
-  let email = data.email_addresses[0].email_address as string;
-  let name = data.first_name as string;
+  let req = await request.json();
+  let email = req.data.email_addresses[0].email_address as string;
+  let name = req.data.first_name as string;
 
   const usersCollection = collection(firestore, "users");
 
