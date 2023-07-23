@@ -55,6 +55,7 @@ export default function Gallery() {
                         width={500}
                         height={500}
                         quality={100}
+                        priority={true}
                         src={item.avatar}
                         className="w-full h-full object-cover object-center shadow-md rounded-xl hover:btn-ghost transition hover:scale-110"
                         alt=""
